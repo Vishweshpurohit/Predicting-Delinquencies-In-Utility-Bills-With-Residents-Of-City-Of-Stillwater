@@ -40,9 +40,25 @@ The Data is provided in 4 different tables which contain various elements involv
 
 PFB the data dictionary for the key tables which we are using in our analysis:
 
-table 1
+### New Deposits (New_deps)
 
-table 2
+| Column Name | Description          |
+|-------------|----------------------|
+| UTCSID      | Customer ID          |
+| UTLCID      | Location ID          |
+| NewDep      | Deposit Amount       |
+| Address     | Address of connection|
+
+### CREDIT HISTORY (UT420AP)
+
+| Column Name          | Description                  |
+|----------------------|------------------------------|
+| UTCSID               | Customer ID                  |
+| UTLCID               | Location ID                  |
+| Credit Offense Type  | Credit Offense Type          |
+| Credit Offense Date  | Credit Offense Day, Month, Year |
+| Credit Offense Date  | Credit Offense Day, Month, Year |
+
 
 - **Primary Keys:**
   - *UTCSID and UTLCID are the primary keys which help to identify a unique customer.*
