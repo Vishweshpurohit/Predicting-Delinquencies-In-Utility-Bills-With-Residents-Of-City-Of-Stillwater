@@ -1,4 +1,4 @@
-# Predicting-Delinquency-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater
+# Predicting Delinquency In Utility Bills With Residents Of City Of Stillwater
 
 ## COS: Project Report
 ### Introduction to Project/ Background Information 
