@@ -15,17 +15,17 @@ Using this model, the city can intervene early and take corrective action to pre
 
 
 ### The questions we want to take on include: 
- 
-·	Understanding the data library – This includes understanding all the variables form the various tables provided, understanding the format, metrics to quantify, and the relation of the variables to our broad question of the effects of those variables on delinquency. 
 
-·	Observing clusters and trends followed by accounts – This includes plotting graphs to observe or identify patterns to choose specific variables to further investigate their impact on delinquency. 
-o	How much revenue is lost due to delinquent utility bills, and what is the impact on the City’s budget? How does this affect the citizens of Stillwater? 
+- **Understanding the data library** – This includes understanding all the variables form the various tables provided, understanding the format, metrics to quantify, and the relation of the variables to our broad question of the effects of those variables on delinquency. 
+
+- **Observing clusters and trends followed by accounts** – This includes plotting graphs to observe or identify patterns to choose specific variables to further investigate their impact on delinquency. 
+  - *How much revenue is lost due to delinquent utility bills, and what is the impact on the City’s budget? How does this affect the citizens of Stillwater?* 
  
-·	Relating said patterns to delinquent accounts – Understanding the impact of the variables on each other and checking for correlation among them. 
-o	Are there any external factors, such as economic conditions, that contribute to delinquency, and how can they be mitigated?
+- **Relating said patterns to delinquent accounts** – Understanding the impact of the variables on each other and checking for correlation among them. 
+  - *Are there any external factors, such as economic conditions, that contribute to delinquency, and how can they be mitigated?*
  
-·	Creating model to predict the credit offense amount for new and existing users – To create different models on the variables selected and comparing their accuracies.
-o	How can the city measure the success of its strategy to prevent delinquency and what metrics should be used to track progress? 
+- **Creating model to predict the credit offense amount for new and existing users** – To create different models on the variables selected and comparing their accuracies.
+  - *How can the city measure the success of its strategy to prevent delinquency and what metrics should be used to track progress?* 
 
 As we delved into the data and conducted our analysis, we aimed to answer several key questions to gain deeper insights into the delinquency issues related to utility bill payments in the City of Stillwater. 
 
@@ -33,7 +33,7 @@ Through our research, we hoped to gain a better understanding of the factors tha
 
 Furthermore, we explored the demographics of households that were more likely to become delinquent on their utility bills and assessed how these factors could be leveraged to prevent delinquency. 
 
-By answering these questions and gaining valuable insights into the data, we developed a comprehensive and data-driven approach to address the delinquency issues in the Cit of Stillwater. 
+By answering these questions and gaining valuable insights into the data, we developed a comprehensive and data-driven approach to address the delinquency issues in the City of Stillwater.
 
 ### Data description and Data Collection:
 The Data is provided in 4 different tables which contain various elements involving the customer details and their billing information. We have four tables containing about 61 variables, each of which gives us information about the location of the customer, their deposit details, or their bills. However, some of these tables and variables were null, and we are ignoring those variables for our analysis. 
