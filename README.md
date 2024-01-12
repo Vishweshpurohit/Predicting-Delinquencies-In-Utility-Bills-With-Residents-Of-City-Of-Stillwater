@@ -59,3 +59,22 @@ table 2
     - *We have found the website: [FFIEC GeoMap](https://geomap.ffiec.gov/ffiecgeomap/). This website outputs the tract for any address given as input.*
     - *Since we had over 4000+ individual rows, we decided on writing a scraping code instead of manually entering the addresses into the site.*
 
+image 1 
+
+- **Web Scraper Steps:**
+  1. *Firstly, the scraper loads the given URL of the web page.*
+  2. *Then, the scraper reads every row from the given column and places it in the search bar.*
+  3. *The scraper then waits for a certain time for the results to load.*
+  4. *When the results are loaded, the scraper copies the tract output from the output section and stores it in a list.*
+  5. *The scraper then clears the search section and pastes the next row as an input.*
+  6. *This process is continued for all the rows in the individual addresses.*
+  7. *All the output tracts are stored as a list and saved to the local address as a column for a CSV.*
+
+- **Data Preparation:**
+  - *To prepare the dataset for analysis, we followed the below steps:*
+    1. *We used the credit table to extract the customers who have defaulted at least once.*
+    2. *To remove duplications in the credit table, we kept the most recent credit amount for each combination of UTCSID and UTLCID (Cust_id).*
+    3. *To include just the residential customers, we merged the modified credit table with the list of residential UTLCID and their corresponding addresses.*
+    4. *Now, we had the dataset with UTCSID, UTLCID, most recent credit amount, credit default date, and the full address.*
+    5. *To enrich the dataset, we used the scraped census data and merged them with corresponding census tracts based on the full address.*
+
