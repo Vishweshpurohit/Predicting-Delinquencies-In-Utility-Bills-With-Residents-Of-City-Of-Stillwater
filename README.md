@@ -75,7 +75,7 @@ PFB the data dictionary for the key tables which we are using in our analysis:
     - *We have found the website: [FFIEC GeoMap](https://geomap.ffiec.gov/ffiecgeomap/). This website outputs the tract for any address given as input.*
     - *Since we had over 4000+ individual rows, we decided on writing a scraping code instead of manually entering the addresses into the site.*
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture1.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp1.png))
 
 - **Web Scraper Steps:**
   1. *Firstly, the scraper loads the given URL of the web page.*
@@ -125,15 +125,15 @@ During the last semester, we examined how different areas within the Stillwater 
 
 ### Results:
 We carried out some basic visualizations to better understand the dataset's descriptive statistics
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture2.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp2.png))
 
 Visualizations that showed the distribution of income across various categories showed that the average income by income levels showed people in the upper-income level who had an average age of 35.67(36) had an average annual income of $116.231. Ignoring the null values, total housing for people in the upper-income level was the lowest among other income levels.
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture3.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp3.png))
 
 The income-level by gender population visualizations showed that majority of men and women were in the upper income-level but a population against income-level chart showed that majority of the population belonged in the middle-income level.
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture4.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp4.png))
 
 The analysis also showed that November had the highest amount of credit offence followed by October and September. The trend in the credit offence amount over the years gives the assumption that people tend to accrue more utilities during ember months and the beginning of the year.
 
@@ -143,17 +143,17 @@ The shows that about 76% of the customers who defaulted earned less than 65k per
 
 We did some secondary research to understand what kind of socioeconomic factor might be related to the amount of money that people are defaulting on. Therefore, we plotted a scatterplot to understand the kind of relationship that exists between the target variable and the predictor variables. 
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture5.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp5.png))
 
 We see that none of our predictor variables (“avg_age”, “population”, “median income”, and “renters”) have any kind of identifiable relationship with our target variable (“credit_offense_amount”). This might be due to the fact the values of our predictor variables are only a few based on the census tract (only 12 different values for each of our predictor variables) and our target variable’s range is 3707.92 with a mean of 128.551 and 8687 unique values.
 Even we understand that there is not an identifiable linear association between the target and predictor variables, we look at the correlation matrix to understand the strength of linear association. 
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture6.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp6.png))
 
 We notice that none of the predictor variables have a strong correlation with the target variable. 
 However, we have gone ahead and fitted a linear regression to understand the significance and the kind of association that the predictor variables might have with the target variable. The regression model has a R^2 value of 0.2% which means that around 0.2% of the variation in “credit_offense_amount” is being explained with the variables “avg_age”, “population”, “median_income”, “renters”, and “underserved”. The regression model has been checked for multicollinearity and the heteroscedasticity and adjusted for the same. 
 
-![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture7.png))
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp7.png))
 
 We see that the amount of credit offense decreases with the increase in the average age of that particular census tract. Since Stillwater is predominantly a college town, we can infer that the student population is defaulting more than the regular residents of the city. We also notice that the census tracts with the higher median income are incurring higher credit amounts. This might be because the residents in wealthier neighborhoods might have more opportunity to take on debt or the apartment complexes that they live in are an all-bills paid community and the community itself might incur the credit offense amount. We also see that the underserved census tracts have a higher credit offense amount as compared to the other census tracts.
 
