@@ -185,7 +185,3 @@ Stillwater, Oklahoma population 2022. (n.d.). Retrieved November 7, 2022, from h
 Donadello, I., Hunter, A., Teso, S., & Dragoni, M. (2021, December 15). Machine learning for utility prediction in argument-based Computational Persuasion. Retrieved November 7, 2022, from https://arxiv.org/abs/2112.04953
 City Of Stillwater Interactive Map. (n.d.). Retrieved November 7, 2022, from https://stw.maps.arcgis.com/apps/webappviewer/index.html?id=e5f507cfcbe445d5a5b9277ab706a2bc
 
-## Appendix:
-The following are the Tableau workbooks, Python and R codebooks that were used to create the models and the visualizations. We have hyperlinked all our workbooks with the titles.
-
-
