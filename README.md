@@ -39,3 +39,23 @@ By answering these questions and gaining valuable insights into the data, we dev
 The Data is provided in 4 different tables which contain various elements involving the customer details and their billing information. We have four tables containing about 61 variables, each of which gives us information about the location of the customer, their deposit details, or their bills. However, some of these tables and variables were null, and we are ignoring those variables for our analysis. 
 
 PFB the data dictionary for the key tables which we are using in our analysis:
+
+table 1
+
+table 2
+
+- **Primary Keys:**
+  - *UTCSID and UTLCID are the primary keys which help to identify a unique customer.*
+
+- **Data Facts:**
+  - *After removing all the commercial customers from the dataset, we have the following data facts considered for our analysis and prediction model:*
+    - *Total number of distinct residential UTCSID and UTLCID: 16,516*
+    - *Distinct residential addresses where the City of Stillwater provides services: 6,918*
+
+- **Scrapping Data:**
+  - *As part of the secondary research, we were planning to add socioeconomic data to our existing company data set.*
+  - *To get socioeconomic parameters, we are looking at census data. However, we have census data on an aggregate level of a tract rather than individual addresses.*
+  - *To accommodate that, we have worked on finding the corresponding tract values for individual addresses.*
+    - *We have found the website: [FFIEC GeoMap](https://geomap.ffiec.gov/ffiecgeomap/). This website outputs the tract for any address given as input.*
+    - *Since we had over 4000+ individual rows, we decided on writing a scraping code instead of manually entering the addresses into the site.*
+
