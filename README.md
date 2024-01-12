@@ -94,3 +94,30 @@ image 1
     4. *Now, we had the dataset with UTCSID, UTLCID, most recent credit amount, credit default date, and the full address.*
     5. *To enrich the dataset, we used the scraped census data and merged them with corresponding census tracts based on the full address.*
 
+## Discussion/Conclusions:
+For this project, we used the data available in the census bureau to append to the existing credit offense amount. This analysis gave us insight into how the different addresses in still are affecting the delinquency rate of the city. 
+
+The next steps in the data analysis include but are not limited to: 
+
+·	Further visualizations that can help uncover additional insights and uncover potential business issues for utility companies will be carried out. Additional data about the customers will be required to build out a personalized predictive model for the citizens of Stillwater. 
+·	Data from the smart meters (that are going to be installed in the later part of 2023) can help build better predictive models for understanding the credit offense type. We can create an alert system using the existing predictive models to make sure that the residents are not defaulting. 
+·	Entire data about all the residents with a flag about whether they have defaulted in the past if given to us can be fitted into a model to understand whether a person taking a new connection will be defaulting. 
+
+## References - Team
+Utility & Billing Services. (n.d.). Retrieved November 7, 2022, from http://stillwater.org/page/home/government/utilities/utility-billing-services
+How utilities can use machine learning for bad debt control. (n.d.). Retrieved November 7, 2022, from https://articles.utegration.com/how-utilities-can-use-machine-learning-for-bad-debt-control
+Stillwater, Oklahoma population 2022. (n.d.). Retrieved November 7, 2022, from https://worldpopulationreview.com/us-cities/stillwater-ok-population
+Donadello, I., Hunter, A., Teso, S., & Dragoni, M. (2021, December 15). Machine learning for utility prediction in argument-based Computational Persuasion. Retrieved November 7, 2022, from https://arxiv.org/abs/2112.04953
+City Of Stillwater Interactive Map. (n.d.). Retrieved November 7, 2022, from https://stw.maps.arcgis.com/apps/webappviewer/index.html?id=e5f507cfcbe445d5a5b9277ab706a2bc
+
+## Appendix:
+The following are the Tableau workbooks, Python and R codebooks that were used to create the models and the visualizations. We have hyperlinked all our workbooks with the titles.
+
+## Data Preparation
+Web Scraping 1
+Web Scraping 2
+Web Scraping 3
+Modelling 1
+Modelling 2
+Tableau Workbook 1
+
