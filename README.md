@@ -75,7 +75,7 @@ PFB the data dictionary for the key tables which we are using in our analysis:
     - *We have found the website: [FFIEC GeoMap](https://geomap.ffiec.gov/ffiecgeomap/). This website outputs the tract for any address given as input.*
     - *Since we had over 4000+ individual rows, we decided on writing a scraping code instead of manually entering the addresses into the site.*
 
-image 1 
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture1.png))
 
 - **Web Scraper Steps:**
   1. *Firstly, the scraper loads the given URL of the web page.*
@@ -93,6 +93,81 @@ image 1
     3. *To include just the residential customers, we merged the modified credit table with the list of residential UTLCID and their corresponding addresses.*
     4. *Now, we had the dataset with UTCSID, UTLCID, most recent credit amount, credit default date, and the full address.*
     5. *To enrich the dataset, we used the scraped census data and merged them with corresponding census tracts based on the full address.*
+
+At the end of the above steps, we collated the census data with our modified credit dataset to create the final dataset which include the following variables:
+
+### Variable Descriptions
+
+| Source                 | Variable Name         | Description                                            |
+|------------------------|-----------------------|--------------------------------------------------------|
+| City of Stillwater     | utcsid                | Service ID                                             |
+| City of Stillwater     | utlcid                | Location ID                                            |
+| City of Stillwater     | cust_id               | Unique ID based on the combination of utcsid and utlcid |
+| City of Stillwater     | credit_date           | Most recent date of credit default                      |
+| City of Stillwater     | credit_offense_amount | Most recent credit amount defaulted                    |
+| City of Stillwater     | full_address          | Complete address of the customer                        |
+| Census                 | census_tract          | The census tract under which the customer falls into    |
+| Census                 | avg_age               | Average age of the population in the census tract       |
+| Census                 | population            | Average population in the census tract                  |
+| Census                 | male                  | Male population in the census tract                     |
+| Census                 | female                | Female population in the census tract                   |
+| Census                 | median_income         | Median income of the population in the census tract     |
+| Census                 | owners                | Number of owners in the census tract                    |
+| Census                 | renters               | Number of renters in the census tract                   |
+| Census                 | total_housing         | Total number of housings in the census tract            |
+| Census                 | underserved           | Yes or no based on if the census tract falls under underserved category |
+| Census                 | income_level          | Income level of the population in the census tract      |
+
+### Census Data and Demographics:
+In the pivotal predictive phase of our year-long project, we employed a range of essential tools and resources, including Python, Excel, Tableau, and census data, to further refine our analysis. Census tracts proved to be an asset in augmenting our understanding of the City of Stillwater. Building on our prior findings, we conducted a thorough examination of the census data to uncover invaluable insights into the community's demographics, socioeconomic status, and housing situation. To conduct a detailed exploration of this data, we employed local community census blocks, which enabled us to perform a more comprehensive analysis of the city and its data. This approach allowed us to not only identify general demographic information such as age, gender, and race but also more specific characteristics like household income.
+### Methodology:
+During the last semester, we examined how different areas within the Stillwater community behave in terms of credit owed for various utilities. We accomplished this by matching addresses to corresponding census tracts and augmenting the data frame with socio-economic data obtained from the census bureau. Using this finalized data frame, we then developed predictive models to identify the factors that influence credit amounts. This empirical analysis aims to establish causal relationships. To better understand the data, we created visualizations, and the resulting models and insights from the visualizations are presented in our results.
+
+### Results:
+We carried out some basic visualizations to better understand the dataset's descriptive statistics
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture2.png))
+
+Visualizations that showed the distribution of income across various categories showed that the average income by income levels showed people in the upper-income level who had an average age of 35.67(36) had an average annual income of $116.231. Ignoring the null values, total housing for people in the upper-income level was the lowest among other income levels.
+
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture3.png))
+
+The income-level by gender population visualizations showed that majority of men and women were in the upper income-level but a population against income-level chart showed that majority of the population belonged in the middle-income level.
+
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture4.png))
+
+The analysis also showed that November had the highest amount of credit offence followed by October and September. The trend in the credit offence amount over the years gives the assumption that people tend to accrue more utilities during ember months and the beginning of the year.
+
+image
+
+The shows that about 76% of the customers who defaulted earned less than 65k per annum and that customers that belong to the middle-income level defaulted the most. This is closely followed by customers who belonged to the moderate income-level.
+
+We did some secondary research to understand what kind of socioeconomic factor might be related to the amount of money that people are defaulting on. Therefore, we plotted a scatterplot to understand the kind of relationship that exists between the target variable and the predictor variables. 
+
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture5.png))
+
+We see that none of our predictor variables (“avg_age”, “population”, “median income”, and “renters”) have any kind of identifiable relationship with our target variable (“credit_offense_amount”). This might be due to the fact the values of our predictor variables are only a few based on the census tract (only 12 different values for each of our predictor variables) and our target variable’s range is 3707.92 with a mean of 128.551 and 8687 unique values.
+Even we understand that there is not an identifiable linear association between the target and predictor variables, we look at the correlation matrix to understand the strength of linear association. 
+
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture6.png))
+
+We notice that none of the predictor variables have a strong correlation with the target variable. 
+However, we have gone ahead and fitted a linear regression to understand the significance and the kind of association that the predictor variables might have with the target variable. The regression model has a R^2 value of 0.2% which means that around 0.2% of the variation in “credit_offense_amount” is being explained with the variables “avg_age”, “population”, “median_income”, “renters”, and “underserved”. The regression model has been checked for multicollinearity and the heteroscedasticity and adjusted for the same. 
+
+![images/example.png](https://github.com/Vishweshpurohit/Prompting-Large-Language-Models-like-Gpt/blob/main/Picture7.png))
+
+We see that the amount of credit offense decreases with the increase in the average age of that particular census tract. Since Stillwater is predominantly a college town, we can infer that the student population is defaulting more than the regular residents of the city. We also notice that the census tracts with the higher median income are incurring higher credit amounts. This might be because the residents in wealthier neighborhoods might have more opportunity to take on debt or the apartment complexes that they live in are an all-bills paid community and the community itself might incur the credit offense amount. We also see that the underserved census tracts have a higher credit offense amount as compared to the other census tracts.
+
+### Model Comparison
+
+| Models             | Root Mean Squared Error | R-squared (1 – TSS/RSS) |
+|--------------------|-------------------------|--------------------------|
+| Boosting           | 223.0759                | 0.0106                   |
+| Bagging            | 223.0874                | 0.0105                   |
+| Random Forest      | 223.1019                | 0.0104                   |
+| Decision Tree      | 223.1951                | 0.0096                   |
+| Linear Regression  | 223.9551                | 0.0028                   |
+
+We observe that Boosting is the champion model in this comparison. It has the lowest root mean squared error and the highest R-squared value among the models. While other models can be explored, it's important to note that these are black box models, making it challenging to understand the association between predictor variables and the target variable.
 
 ## Discussion/Conclusions:
 For this project, we used the data available in the census bureau to append to the existing credit offense amount. This analysis gave us insight into how the different addresses in still are affecting the delinquency rate of the city. 
@@ -113,11 +188,4 @@ City Of Stillwater Interactive Map. (n.d.). Retrieved November 7, 2022, from htt
 ## Appendix:
 The following are the Tableau workbooks, Python and R codebooks that were used to create the models and the visualizations. We have hyperlinked all our workbooks with the titles.
 
-## Data Preparation
-Web Scraping 1
-Web Scraping 2
-Web Scraping 3
-Modelling 1
-Modelling 2
-Tableau Workbook 1
 
