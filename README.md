@@ -137,7 +137,7 @@ The income-level by gender population visualizations showed that majority of men
 
 The analysis also showed that November had the highest amount of credit offence followed by October and September. The trend in the credit offence amount over the years gives the assumption that people tend to accrue more utilities during ember months and the beginning of the year.
 
-image
+![images/example.png](https://github.com/Vishweshpurohit/Predicting-Delinquencies-In-Utility-Bills-With-Residents-Of-City-Of-Stillwater/blob/main/cosp8.png))
 
 The shows that about 76% of the customers who defaulted earned less than 65k per annum and that customers that belong to the middle-income level defaulted the most. This is closely followed by customers who belonged to the moderate income-level.
 
